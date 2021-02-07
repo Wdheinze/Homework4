@@ -7,19 +7,120 @@
 </head>
 
 <script>
-  function
- </script>
+
+  function getChoice1() {
+    var myChoice = document.getElementById("choice").value;
+    var myQuestion = document.getElementById("question");
+
+    if (myChoice === "Left") {
+      document.getElementById("choice").style.display = "none";
+      document.getElementById("submit").style.display = "none";
+
+      document.getElementById("choice2").style.display = "block";
+      document.getElementById("submit2").style.display = "block";
+
+
+      myQuestion.innerHTML = "<h1>Reki goes into the left cave. He finds a sleeping dragon. Should Reki wake it up? </h1>";
+    }
+    else if (myChoice === "Right") {
+      myQuestion.innerHTML = "<h1>Reki goes into the right cave. He finds an angry troll. The troll attacks. What shall Reki do now?</h1>";
+    }
+    else {
+      myQuestion.innerHTML = "<h1>Invalid Entry Please Refresh</h1>"
+    }
+  }
+
+
+  function getChoice2() {
+
+    var dragon = document.getElementById("choice2").value;
+    var myQuestion = document.getElementById("question");
+
+    if (dragon === "Wake up") {
+      myQuestion.innerHTML = "<h1>Reki wakes up the dragon. He dies. Game over</h1>";
+    } else if (dragon === "Leave alone") {
+      myQuestion.innerHTML = "<h1>Reki leaves the dragon alone. He comes across a pile of treasure. Steal some?</h1>";
+    }
+    else {
+      myQuestion.innerHTML = "<h1>Invalid Entry Please Refresh</h1>"
+    }
+  }
+  //This code be not working
+  function getChoice3() {
+
+    var treasure = document.getElementById("choice3").value;
+    var myQuestion = document.getElementById("question");
+
+    if (treasure === "Steal") {
+      myQuestion.innerHTML = "<h1>Reki walks over to the treasure. He finds an ancient staff. It is legendary. He goes back and gets his certificate. YOU WIN.</h1>";
+    } else if (treasure === "Dont steal") {
+      myQuestion.innerHTML = "<h1>Reki leaves the cave. He will be a novice magician forever. Lose</h1>";
+    }
+    else {
+      myQuestion.innerHTML = "<h1>Invalid Entry Please Refresh</h1>";
+    }
+  }
+  //Help 
+
+  function getChoice4() {
+
+    var troll = document.getElementById("choice4").value;
+    var myQuestion = document.getElementById("question");
+
+    if (troll === "Fight") {
+      myQuestion.innerHTML = "<h1>Reki gets his magic weapon out. lets battle. What magic shall Reki use.</h1>";
+    } else if (troll === "Run") {
+      myQuestion.innerHTML = "<h1>Reki runs for his life. He isnt strong enough to win. Reki will be a novice magician forever. Lose</h1>";
+    }
+    else {
+      myQuestion.innerHTML = "<h1>Invalid Entry Please Refresh</h1>"
+    }
+  }
+
+  function getChoice5() {
+
+    var fight = document.getElementById("choice5").value;
+    var myQuestion = document.getElementById("question");
+
+    if (fight === "Water") {
+      myQuestion.innerHTML = "<h1>Reki splashes the troll. The troll chases Reki out. Lose.</h1>";
+    } else if (fight === "Fire") {
+      myQuestion.innerHTML = "<h1>Reki sets the troll on fire. He kills it. He goes back and gets his certificate. YOU WIN </h1>";
+    }
+    else {
+      myQuestion.innerHTML = "<h1>Invalid Entry Please Refresh</h1>"
+    }
+  }
+
+</script>
 
 <body>
-  <h1>In the depths of a dungeon Reki is a wizard trying to earn his certificate of magic mastery. To do this Reki has to defeat a high class monster.
-    <br>
-    <br>
-    Reki comes across two caves one on the left the other on the right. Which way should Reki go
-  </h1>
+  <div id="question">
+    <h1>Reki is a wizard trying to earn his certificate of magic mastery, in the depths of a dungeon. To do this Reki
+      has to defeat a high class monster or find a legendary weapon.
+      <br>
+      <br>
+      Reki comes across two caves, one on the left the other on the right. Which way should Reki go?
+    </h1>
+  </div>
   <br>
   <br>
+
   <input type="text" size="32" id="choice" value="Please enter Left or Right">
-  <button id="submit" onclick=>Please press to continue </button>
+  <button id="submit" onclick="getChoice1();">Please click to continue </button>
+
+  <input type="text" size="32" id="choice2" value="Wake up or Leave alone?" style="display:none">
+  <button id="submit2" onclick="getChoice2();" style="display:none">Please click to continue </button>
+
+  <input type="text" size="32" id="choice3" value="Steal the treasure or dont steal" style="display:none">
+  <button id="submit3" onclick="getChoice3();" style="display:none">Please click to continue </button>
+
+  <input type="text" size="32" id="choice4" value="Fight or Run?" style="display:none">
+  <button id="submit4" onclick="getChoice4();" style="display:none">Please click to continue </button>
+
+  <input type="text" size="32" id="choice5" value="End of game" style="display:none">
+  <button id="submit5" onclick="getChoice5();" style="display:none">Please click to continue </button>
+
 </body>
 
 </html>
