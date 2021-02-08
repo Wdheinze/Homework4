@@ -2,6 +2,16 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <style>
+    body {
+      background-color: black;
+    }
+
+    h1 {
+      color: antiquewhite;
+      text-align: center;
+    }
+  </style>
   <meta charset="utf-8">
   <title>homework 4</title>
 </head>
@@ -13,6 +23,7 @@
     var myQuestion = document.getElementById("question");
 
     if (myChoice === "Left") {
+      document.getElementById("storyImg").src = ("1.png");
       document.getElementById("choice").style.display = "none";
       document.getElementById("submit").style.display = "none";
 
@@ -23,9 +34,20 @@
       myQuestion.innerHTML = "<h1>Reki goes into the left cave. He finds a sleeping dragon. Should Reki wake it up? </h1>";
     }
     else if (myChoice === "Right") {
+      document.getElementById("storyImg").src = ("5.jpg");
+      document.getElementById("choice").style.display = "none";
+      document.getElementById("submit").style.display = "none";
+
+      document.getElementById("choice4").style.display = "block";
+      document.getElementById("submit4").style.display = "block";
       myQuestion.innerHTML = "<h1>Reki goes into the right cave. He finds an angry troll. The troll attacks. What shall Reki do now?</h1>";
     }
     else {
+      document.getElementById("choice").style.display = "none";
+      document.getElementById("submit").style.display = "none";
+
+      document.getElementById("choice6").style.display = "block";
+      document.getElementById("submit6").style.display = "block";
       myQuestion.innerHTML = "<h1>Invalid Entry Please Refresh</h1>"
     }
   }
@@ -37,30 +59,61 @@
     var myQuestion = document.getElementById("question");
 
     if (dragon === "Wake up") {
+      document.getElementById("storyImg").src = ("3.jpg");
+      document.getElementById("choice2").style.display = "none";
+      document.getElementById("submit2").style.display = "none";
+
+      document.getElementById("choice6").style.display = "block";
+      document.getElementById("submit6").style.display = "block";
       myQuestion.innerHTML = "<h1>Reki wakes up the dragon. He dies. Game over</h1>";
     } else if (dragon === "Leave alone") {
+      document.getElementById("storyImg").src = ("2.jpg");
+      document.getElementById("choice2").style.display = "none";
+      document.getElementById("submit2").style.display = "none";
+
+      document.getElementById("choice3").style.display = "block";
+      document.getElementById("submit3").style.display = "block";
       myQuestion.innerHTML = "<h1>Reki leaves the dragon alone. He comes across a pile of treasure. Steal some?</h1>";
     }
     else {
+      document.getElementById("choice2").style.display = "none";
+      document.getElementById("submit2").style.display = "none";
+
+      document.getElementById("choice6").style.display = "block";
+      document.getElementById("submit6").style.display = "block";
       myQuestion.innerHTML = "<h1>Invalid Entry Please Refresh</h1>"
     }
   }
-  //This code be not working
+
   function getChoice3() {
 
     var treasure = document.getElementById("choice3").value;
     var myQuestion = document.getElementById("question");
 
     if (treasure === "Steal") {
-      myQuestion.innerHTML = "<h1>Reki walks over to the treasure. He finds an ancient staff. It is legendary. He goes back and gets his certificate. YOU WIN.</h1>";
-    } else if (treasure === "Dont steal") {
+      document.getElementById("storyImg").src = ("4.png");
+      document.getElementById("Winn").src = ("Win.png");
+      myQuestion.innerHTML = "<h1>Reki walks over to the treasure. He finds an ancient sword. It is legendary. He goes back and gets his certificate. YOU WIN.</h1>";
+    } else if (treasure === "dont steal") {
+      document.getElementById("storyImg").src = ("Lose.gif");
+      document.getElementById("choice3").style.display = "none";
+      document.getElementById("submit3").style.display = "none";
+
+      document.getElementById("choice6").style.display = "block";
+      document.getElementById("submit6").style.display = "block";
       myQuestion.innerHTML = "<h1>Reki leaves the cave. He will be a novice magician forever. Lose</h1>";
     }
     else {
+      document.getElementById("choice3").style.display = "none";
+      document.getElementById("submit3").style.display = "none";
+
+      document.getElementById("choice6").style.display = "block";
+      document.getElementById("submit6").style.display = "block";
       myQuestion.innerHTML = "<h1>Invalid Entry Please Refresh</h1>";
+
     }
   }
-  //Help 
+
 
   function getChoice4() {
 
@@ -68,23 +121,53 @@
     var myQuestion = document.getElementById("question");
 
     if (troll === "Fight") {
+      document.getElementById("storyImg").src = ("6.png");
+      document.getElementById("choice4").style.display = "none";
+      document.getElementById("submit4").style.display = "none";
+
+      document.getElementById("choice5").style.display = "block";
+      document.getElementById("submit5").style.display = "block";
       myQuestion.innerHTML = "<h1>Reki gets his magic weapon out. lets battle. What magic shall Reki use.</h1>";
     } else if (troll === "Run") {
+      document.getElementById("storyImg").src = ("Lose.gif");
+      document.getElementById("choice4").style.display = "none";
+      document.getElementById("submit4").style.display = "none";
+
+      document.getElementById("choice6").style.display = "block";
+      document.getElementById("submit6").style.display = "block";
+
       myQuestion.innerHTML = "<h1>Reki runs for his life. He isnt strong enough to win. Reki will be a novice magician forever. Lose</h1>";
     }
     else {
+      document.getElementById("choice4").style.display = "none";
+      document.getElementById("submit4").style.display = "none";
+
+      document.getElementById("choice6").style.display = "block";
+      document.getElementById("submit6").style.display = "block";
       myQuestion.innerHTML = "<h1>Invalid Entry Please Refresh</h1>"
     }
   }
 
   function getChoice5() {
 
+    document.getElementById("choice4").style.display = "none";
+    document.getElementById("submit4").style.display = "none";
+
+    document.getElementById("choice5").style.display = "block";
+    document.getElementById("submit5").style.display = "block";
     var fight = document.getElementById("choice5").value;
     var myQuestion = document.getElementById("question");
 
     if (fight === "Water") {
+      document.getElementById("storyImg").src = ("Lose.gif");
       myQuestion.innerHTML = "<h1>Reki splashes the troll. The troll chases Reki out. Lose.</h1>";
+      document.getElementById("choice5").style.display = "none";
+      document.getElementById("submit5").style.display = "none";
+
+      document.getElementById("choice6").style.display = "block";
+      document.getElementById("submit6").style.display = "block";
     } else if (fight === "Fire") {
+      document.getElementById("Winn").src = ("Win.png");
       myQuestion.innerHTML = "<h1>Reki sets the troll on fire. He kills it. He goes back and gets his certificate. YOU WIN </h1>";
     }
     else {
@@ -92,9 +175,24 @@
     }
   }
 
+  function getChoice6() {
+    console.log("hi");
+    document.getElementById("storyImg").src = ("0.jpg");
+    document.getElementById("choice6").style.display = "none";
+    document.getElementById("submit6").style.display = "none";
+
+    document.getElementById("choice").style.display = "block";
+    document.getElementById("submit").style.display = "block";
+    document.getElementById("question").innerHTML = " <h1>Reki is a wizard trying to earn his certificate of magic mastery, in the depths of a dungeon. To do this Reki has to defeat a high class monster or find a legendary weapon <br> <br>Reki comes across two caves, one on the left the other on the right. Which way should Reki go?</h1>";
+  }
+
+
+
 </script>
 
 <body>
+  <img src="0.jpg" id="storyImg">
+  <img src="" id="Winn">
   <div id="question">
     <h1>Reki is a wizard trying to earn his certificate of magic mastery, in the depths of a dungeon. To do this Reki
       has to defeat a high class monster or find a legendary weapon.
@@ -118,9 +216,12 @@
   <input type="text" size="32" id="choice4" value="Fight or Run?" style="display:none">
   <button id="submit4" onclick="getChoice4();" style="display:none">Please click to continue </button>
 
-  <input type="text" size="32" id="choice5" value="End of game" style="display:none">
+  <input type="text" size="32" id="choice5" value="Fire or Water" style="display:none">
   <button id="submit5" onclick="getChoice5();" style="display:none">Please click to continue </button>
 
+
+  <input type="text" size="32" id="choice6" value="End of game" style="display:none">
+  <button id="submit6" onclick="getChoice6();" style="display:none">Please click to continue </button>
 </body>
 
 </html>
